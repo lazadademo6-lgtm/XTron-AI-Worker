@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        #chatbox { border: 1px solid #ccc; height: 300px; overflow-y: scroll; margin-bottom: 10px; padding: 10px; }
+        #input { width: calc(100% - 100px); }
+        button { width: 80px; }
+    </style>
+</head>
+<body>
+    <h1>Chat Interface</h1>
+    <div id="chatbox"></div>
+    <input type="text" id="input" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+
+    <h2>API Key Manager</h2>
+    <input type="text" id="api-key" placeholder="Enter API Key" />
+    <button onclick="saveApiKey()">Save API Key</button>
+
+    <h2>Project Preview</h2>
+    <button onclick="previewProject()">Preview Project</button>
+
+    <h2>GitHub Push Functionality</h2>
+    <button onclick="pushToGithub()">Push to GitHub</button>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('input');
+            const chatbox = document.getElementById('chatbox');
+            chatbox.innerHTML += '<div>' + input.value + '</div>';
+            input.value = '';
+        }
+        function saveApiKey() {
+            const apiKey = document.getElementById('api-key').value;
+            alert('API Key saved: ' + apiKey);
+        }
+        function previewProject() {
+            alert('Previewing project...');
+        }
+        function pushToGithub() {
+            alert('Pushing to GitHub...');
+        }
+    </script>
+</body>
+</html>
